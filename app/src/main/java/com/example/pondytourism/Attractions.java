@@ -74,9 +74,9 @@ public class Attractions extends AppCompatActivity implements ItemClickListener 
             JSONObject detail = r.getJSONObject("languages");
             attractionDetailList.add(detail.getString("english"));
             languages.add(detail.toString());
-            //coordinates.add(r.getString("coordinates"));
-            Log.i("languages", languages.toString());
-            //Log.i("languages", coordinates.toString());
+            coordinates.add(r.getString("coordinate"));
+//            Log.i("languages", languages.toString());
+//            Log.i("locations", r.getString("coordinate"));
         }
 
         Log.i("attractionList", attractionList.toString());
@@ -86,7 +86,7 @@ public class Attractions extends AppCompatActivity implements ItemClickListener 
     public String loadJSONFromAsset() {
         String json = null;
         try {
-            InputStream is = this.getAssets().open("data1.json");
+            InputStream is = this.getAssets().open("data2.json");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
@@ -105,12 +105,14 @@ public class Attractions extends AppCompatActivity implements ItemClickListener 
         String detail = attractionDetailList.get(position);
         String language = languages.get(position);
         String image = images.get(position);
+        String coordinate = coordinates.get(position);
 
         Intent previewIntent = new Intent(Attractions.this, AttractionDetail.class);
         previewIntent.putExtra("name", name);
         previewIntent.putExtra("image", image);
         previewIntent.putExtra("detail", detail);
         previewIntent.putExtra("language", language);
+        previewIntent.putExtra("coordinate", coordinate);
         startActivity(previewIntent);
     }
 }

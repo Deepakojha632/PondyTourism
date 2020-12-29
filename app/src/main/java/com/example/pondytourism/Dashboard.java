@@ -1,6 +1,7 @@
 package com.example.pondytourism;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -66,6 +67,14 @@ public class Dashboard extends AppCompatActivity implements ItemClickListener {
                 addAttraction.setVisibility(View.GONE);
                 break;
             case R.id.action_logout:
+                SharedPreferences preferences = getSharedPreferences("user", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                if (preferences.contains("loggedin")) {
+                    editor.putBoolean("loggedin", false);
+                    editor.apply();
+                    startActivity(new Intent(Dashboard.this, MainActivity.class));
+                    finishAffinity();
+                }
                 break;
         }
         return super.onOptionsItemSelected(item);
