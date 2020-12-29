@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
     EditText email, password;
     Button login;
+    TextView openRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,12 @@ public class MainActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         login = findViewById(R.id.loginBtn);
+        openRegister = findViewById(R.id.openRegister);
 
+        openRegister.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, Register.class));
+            finishAffinity();
+        });
 
         login.setOnClickListener(v -> {
             if (email.getText().toString().equals("Rakesh") && password.getText().toString().equals("123456")) {

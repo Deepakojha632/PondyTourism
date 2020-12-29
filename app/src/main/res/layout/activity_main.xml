@@ -54,5 +54,19 @@
         android:layout_marginTop="8dp"
         android:text="@string/login" />
 
+    <TextView
+        android:id="@+id/openRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:shadowColor="#BDBAB6"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="8"
+        android:text="Click here to Register"
+        android:textColor="#303F9F"
+        android:textSize="16sp" />
 
 </RelativeLayout>
