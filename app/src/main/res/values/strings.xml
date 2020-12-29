@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">PondyTourism</string>
+    <string name="title">Title</string>
+    <string name="detail">Detail</string>
+    <string name="itemImage">image</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="avatar">avatar</string>
+
+    <string name="about">Pondy Tourism app provides different language support including Hindi, English, Tamil, Telugu, Malayalam for better reach to the place. It provides relevant information about concerned places.
+It\'s easy to use as its UI navigation is straight forward. You can find different categories of places like Temples, Beaches, Museums, Lakes, and gardens, etc.
+Hope it will give you boost your travel activity.\n\n Developed By: \nRakesh Kumar\nNasimul Gani\n\nHappy Tourism.</string>
+    <string name="attractionimage">attractionImage</string>
+    <string name="locate">locate</string>
+
+    <string-array name="categories">
+        <item>Beaches</item>
+        <item>Museums</item>
+        <item>Temples</item>
+        <item>Lakes and Garden</item>
+    </string-array>
+
+</resources>
